@@ -1,0 +1,34 @@
+{
+    "curly": true,
+    "camelcase": true,
+    "eqeqeq": true,
+    "freeze": true,
+    "sub": true,
+    "indent": 4,
+    "newcap": true,
+    "quotmark": "single",
+    "maxdepth": 6,
+    "maxstatements": 45,
+    "maxlen": 120,
+    "eqnull": true,
+    "funcscope": true,
+    "unused": "vars",
+    "undef": true,
+    "browser": true,
+    "predef": [
+        "$",
+        "angular",
+        "console",
+        "alert",
+        "window"
+    ],
+    "latedef": "nofunc",
+    "globals" : {
+        "module": false,
+        "require": false,
+        "confirm": false,
+        "__dirname": false,
+        "process": false,
+        "google": false
+    }
+} 
