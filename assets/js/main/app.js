@@ -92,6 +92,10 @@ angular.module('GeneralApp', [
                     controller: 'HelpCtrl',
                     templateUrl: 'public/html/login.html'
                 })
+                .when('/profile', {
+                    controller: 'HelpCtrl',
+                    templateUrl: 'public/html/profile.html'
+                })
                 .otherwise({
                     redirectTo: '/'
                 });

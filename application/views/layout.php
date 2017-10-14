@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="/public/vendor/angular-material/angular-material.min.css">
         <link href="/public/vendor/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="/public/vendor/angular-material-time-picker/dist/md-time-picker.css">
+        <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap.min.css">
+        <link href="/public/css/style.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -34,7 +36,8 @@
         <script src="/public/vendor/angular-elastic/elastic.js"></script>
         <script src='/public/vendor/angular-upload/angular-upload.min.js'></script>
         <script src="/public/vendor/angular-clipboard/angular-clipboard.js"></script>
-        <script src="/public/vendor/angular-material-time-picker/dist/md-time-picker.js"></script>  
+        <script src="/public/vendor/angular-material-time-picker/dist/md-time-picker.js"></script>
+        <script src="/public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/public/js/main.min.js"></script>  
     </body>
 </html> 

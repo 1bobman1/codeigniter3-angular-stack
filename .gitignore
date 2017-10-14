@@ -16,10 +16,7 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 bower_components/
-<<<<<<< HEAD
 public/vendor/
-=======
->>>>>>> a92ca24d1bdf0833278eeb6b5f4056db6ea51a95
 system/
 
 # IDE Files
