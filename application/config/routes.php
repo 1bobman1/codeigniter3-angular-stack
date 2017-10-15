@@ -61,4 +61,4 @@ $route['profile'] = '/';
 
 // API REQUEST
 $group_api = 'web/api';
-$route[$group_api . '/users/getUsersList']['get'] = '/home/get_data';
+$route[$group_api . '/users/getUsersList']['get'] = '/api/main/get_data';
