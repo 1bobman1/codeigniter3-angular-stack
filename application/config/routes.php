@@ -58,3 +58,7 @@ $route['main'] = '/';
 $route['help'] = '/';
 $route['login'] = '/';
 $route['profile'] = '/';
+
+// API REQUEST
+//$route['api/users/getUsersList'] = '/home/get_data';
+$route['web/api/users/getUsersList']['get'] = '/home/get_data';

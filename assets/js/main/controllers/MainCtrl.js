@@ -7,7 +7,7 @@ angular.module('GeneralApp')
         $scope.dataBigTest = {};
 
         $scope.getData = function () {
-            $http.post('/home/get_data/').then(function (response) {
+            $http.get('/web/api/users/getUsersList').then(function (response) {
                 console.log(response);
                 $scope.dataBigTest = response.data.object;
             }, function (resp) { });

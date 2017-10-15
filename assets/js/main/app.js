@@ -6,15 +6,19 @@ angular.module('GeneralApp', [
         function ($rootScope, $location, $http, $q,
                   $route, $routeParams, $timeout, $window) {
             $rootScope.mainModule = true;
+            $rootScope.user = {};
             $rootScope.testingMode = $routeParams.testingMode;
-            var deferred = $q.defer(),
-                original,
+            var original,
                 lastRoute,
                 requestId = 0;
 
             $rootScope.setHomeRoute = function (route) {
                 $rootScope.homeRoute = route;
             };
+
+            if ($rootScope.isLoginAuth === true) {
+                $rootScope.isLoginAuth = true;
+            }
 
             $rootScope.$on('$routeChangeSuccess', function (event, current) {
                 if ($location.path() === '/') {
@@ -33,7 +37,6 @@ angular.module('GeneralApp', [
                 if (!param) {
                     return original.call($location);
                 }
-
                 currentRequestId = ++requestId;
                 if (reload === false) {
                     lastRoute = $route.current;
@@ -66,7 +69,7 @@ angular.module('GeneralApp', [
                 }
                 return (current == path);
             }
-            HTTPREQ = window.location.protocol + '//';
+            console.log('Root.scope', $rootScope);
         }
     ])
 
@@ -89,11 +92,18 @@ angular.module('GeneralApp', [
                     templateUrl: 'public/html/help.html'
                 })
                 .when('/login', {
-                    controller: 'HelpCtrl',
+                    controller: 'LoginCtrl',
                     templateUrl: 'public/html/login.html'
                 })
                 .when('/profile', {
-                    controller: 'HelpCtrl',
+                    controller: 'ProfileCtrl',
+                    resolve: {
+                        'check': function ($location, $rootScope) {
+                            if (!$rootScope.isLoginAuth) {
+                                $location.url('/login');
+                            }
+                        }
+                    },
                     templateUrl: 'public/html/profile.html'
                 })
                 .otherwise({

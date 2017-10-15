@@ -12,7 +12,7 @@ class Home extends CI_Controller
 		$array = [];
 		$this->output->set_content_type('application/json');
 		
-		if ($this->input->method(TRUE) != 'POST')
+		if ($this->input->method(TRUE) != 'GET')
 		{
 			$data['status'] = false;
 			$this->output->set_output(json_encode($data));			
