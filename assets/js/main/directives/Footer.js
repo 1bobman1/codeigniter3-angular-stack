@@ -1,13 +1,13 @@
 angular.module('GeneralApp')
-.directive('footer', function () {
+.directive('footerR', function () {
     return {
         restrict: 'E',
         templateUrl: '/public/html/parts/footer.html',
-        controller: HeaderCtrl,
+        controller: FooterCtrl,
         link: function () {
         }
     };
 
-    function HeaderCtrl() {
+    function FooterCtrl() {
     }
 });
