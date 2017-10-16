@@ -16,9 +16,15 @@ angular.module('GeneralApp', [
                 $rootScope.homeRoute = route;
             };
 
-            if ($rootScope.isLoginAuth === true) {
-                $rootScope.isLoginAuth = true;
-            }
+            $rootScope.user = userProfile;
+
+            $rootScope.siginOut = function () {
+                $http.get('/web/api/users/siginOut').then(function (response) {
+                    if (response.data.status === true) {
+                        $window.location.reload();
+                    }
+                }, function (resp) { });
+            };
 
             $rootScope.$on('$routeChangeSuccess', function (event, current) {
                 if ($location.path() === '/') {
@@ -99,7 +105,7 @@ angular.module('GeneralApp', [
                     controller: 'ProfileCtrl',
                     resolve: {
                         'check': function ($location, $rootScope) {
-                            if (!$rootScope.isLoginAuth) {
+                            if (!$rootScope.user.logged_in) {
                                 $location.url('/login');
                             }
                         }

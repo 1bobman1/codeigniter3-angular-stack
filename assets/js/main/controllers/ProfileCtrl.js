@@ -3,10 +3,5 @@ angular.module('GeneralApp')
     function ($scope, $rootScope, $http, $location, DocTitle, $filter) {
         DocTitle.mainTitle = 'Profile';
         DocTitle.Set('page');
-
-        $scope.siginOut = function () {
-            $rootScope.isLoginAuth = false;
-            $location.url('/');
-        };
     }
 ]);

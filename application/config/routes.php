@@ -62,3 +62,5 @@ $route['profile'] = '/';
 // API REQUEST
 $group_api = 'web/api';
 $route[$group_api . '/users/getUsersList']['get'] = '/api/main/get_data';
+$route[$group_api . '/users/siginIn']['post'] = '/api/main/siginIn';
+$route[$group_api . '/users/siginOut']['get'] = '/api/main/siginOut';

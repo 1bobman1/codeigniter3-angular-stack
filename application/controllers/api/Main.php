@@ -28,9 +28,23 @@ class Main extends CI_Controller
 		return true;
 	}
 
-	public function getAuthorization()
+	private function getAuthorization($data)
 	{
-		$array = [];
+		$user = $data['user']['email'];
+		$password = $data['user']['password'];
+
+		if ($user == 'qqq@qq.qq' && $password == '123')
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public function siginIn()
+	{
 		$this->output->set_content_type('application/json');
 		
 		if ($this->input->method(TRUE) != 'POST')
@@ -39,12 +53,50 @@ class Main extends CI_Controller
 			$this->output->set_output(json_encode($data));			
 			return false;
 		}
+		$data1 = $this->input->post(NULL, TRUE);
+		$input_data = json_decode(trim(file_get_contents('php://input')), true);
+
+		if (!empty($input_data)) {
+			$auth = $this->getAuthorization($input_data);
+
+			if ($auth)
+			{
+				$newdata = array('user' => [
+					'id' 		=> '1',
+					'email'     => $input_data['user']['email'],
+					'logged_in' => TRUE]
+				);
+				$this->session->set_userdata($newdata);
+			} else {
+				$data['status'] = false;
+				$this->output->set_output(json_encode($data));
+				return false;
+			}
+		}
+
+
 		
-		$array = [];
-		$data['object'] = $array;
 		$data['status'] = true;
+		$this->output->set_output(json_encode($data));
+		return true;		
+	}
+	
+	public function siginOut()
+	{
+		$array = [];
+		$this->output->set_content_type('application/json');
 		
+		if ($this->input->method(TRUE) != 'GET')
+		{
+			$data['status'] = false;
+			$this->output->set_output(json_encode($data));			
+			return false;
+		}
+
+		$this->session->unset_userdata('user');
+
+		$data['status'] = true;
 		$this->output->set_output(json_encode($data));
 		return true;
-    }
+	}
 }

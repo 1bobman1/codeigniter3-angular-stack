@@ -17,12 +17,9 @@
         <![endif]-->
     </head>
     <body ng-app="GeneralApp" ng-cloak>
-    
         <div class="ng-view"></div>
-        
         <script src="/public/vendor/jquery/dist/jquery.min.js"></script>
         <script src="/public/vendor/jquery-ui/jquery-ui.min.js"></script>
-
         <script src="/public/vendor/angular/angular.min.js"></script>
         <script src="/public/vendor/angular-animate/angular-animate.min.js"></script>
         <script src="/public/vendor/angular-aria/angular-aria.min.js"></script>
@@ -39,5 +36,12 @@
         <script src="/public/vendor/angular-material-time-picker/dist/md-time-picker.js"></script>
         <script src="/public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/public/js/main.min.js"></script>  
+        <script>
+            <?php $data = $_SESSION; if (!empty($data['user'])): ?>
+                var userProfile = <?php echo json_encode($data['user']); ?>;
+            <?php else: ?>
+                var userProfile = false;
+            <?php endif; ?>
+        </script>
     </body>
 </html> 
