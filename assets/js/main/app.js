@@ -1,5 +1,5 @@
 angular.module('GeneralApp', [
-    'ngRoute', 'ngMaterial', 'ngAnimate', 'monospaced.elastic', 'angular-clipboard'
+    'ngRoute', 'ngMaterial', 'ngAnimate', 'monospaced.elastic', 'angular-clipboard', 'oc.lazyLoad'
 ])
     .run(['$rootScope', '$location', '$http', '$q',
         '$route', '$routeParams', '$timeout', '$window',
@@ -11,10 +11,6 @@ angular.module('GeneralApp', [
             var original,
                 lastRoute,
                 requestId = 0;
-
-            $rootScope.setHomeRoute = function (route) {
-                $rootScope.homeRoute = route;
-            };
 
             $rootScope.user = userProfile;
 
