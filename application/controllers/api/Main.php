@@ -66,19 +66,15 @@ class Main extends CI_Controller
 					'email'     => $input_data['user']['email'],
 					'logged_in' => TRUE]
 				);
+				$data['status'] = true;				
 				$this->session->set_userdata($newdata);
 			} else {
 				$data['status'] = false;
-				$this->output->set_output(json_encode($data));
-				return false;
 			}
 		}
-
-
 		
-		$data['status'] = true;
 		$this->output->set_output(json_encode($data));
-		return true;		
+		return false;
 	}
 	
 	public function siginOut()

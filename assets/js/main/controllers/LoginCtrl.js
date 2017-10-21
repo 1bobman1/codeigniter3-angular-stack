@@ -26,7 +26,10 @@ angular.module('GeneralApp')
                     user: $scope.userAuth
                 }).then(function (response) {
                     if (response.data.status === true) {
+                        $scope.errorAuth = false;
                         $window.location.reload();
+                    } else {
+                        $scope.errorAuth = true;
                     }
                 }, function (resp) { });
 
