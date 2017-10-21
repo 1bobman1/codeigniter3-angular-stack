@@ -30,7 +30,6 @@
         <script src="/public/vendor/angular-cookies/angular-cookies.min.js"></script>
         <script src="/public/vendor/angular-material-data-table/dist/md-data-table.min.js"></script>
         <script src="/public/vendor/oclazyload/dist/ocLazyLoad.min.js"></script>
-        <script src="/public/vendor/angular-elastic/elastic.js"></script>
         <script src='/public/vendor/angular-upload/angular-upload.min.js'></script>
         <script src="/public/vendor/angular-clipboard/angular-clipboard.js"></script>
         <script src="/public/vendor/angular-material-time-picker/dist/md-time-picker.js"></script>

@@ -61,6 +61,10 @@ $route['profile'] = '/';
 
 // API REQUEST
 $group_api = 'web/api';
+// USERS
 $route[$group_api . '/users/getUsersList']['get'] = '/api/main/get_data';
 $route[$group_api . '/users/siginIn']['post'] = '/api/main/siginIn';
 $route[$group_api . '/users/siginOut']['get'] = '/api/main/siginOut';
+// ORDERS
+$route[$group_api . '/order/add']['post'] = '/api/orders/add_order';
+$route[$group_api . '/order/list']['get'] = '/api/orders/list_order';

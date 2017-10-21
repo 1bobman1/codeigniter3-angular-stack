@@ -4,6 +4,75 @@
     <div class="row">
         <h1>PROFILE PAGE</h1>
         <hr>
+
+        <md-content>
+        <form action="POST">
+            <md-input-container class="md-block">
+                <h3>ORDER: {{dataDescr.name}}</h3>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex="30">
+                <label>Name order</label>
+                <input type="text" ng-model="dataDescr.name">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex="30">
+                <label>Date</label>
+                <input type="text" ng-model="dataDescr.date">
+            </md-input-container>
+
+            <hr>
+
+            <div layout-gt-sm="row" ng-keypress="add($event)">
+                <md-input-container class="md-block" flex-gt-sm="30">
+                    <label>Product name</label>
+                    <input ng-model="dataRow.productName" id="productName" placeholder="short name product">
+                </md-input-container>
+            
+                <md-input-container class="md-block" flex-gt-sm="10">
+                    <label>Count</label>
+                    <input ng-model="dataRow.productCount" placeholder="5">                    
+                </md-input-container>
+            
+                <md-input-container class="md-block" flex-gt-sm="10">
+                    <label>Price</label>
+                    <input ng-model="dataRow.price" placeholder="199">
+                </md-input-container>
+            
+                <md-input-container class="md-block">
+                    <md-button class="md-raised md-primary" ng-disabled="dataRowCorrect" ng-click="addClick()">Add (press enter)</md-button>
+                </md-input-container>    
+            </div>
+
+            <div ng-repeat="(key, value) in data">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="30">
+                        <label>Product name</label>
+                        <input ng-model="value.name" placeholder="short name product">
+                    </md-input-container>
+                
+                    <md-input-container class="md-block" flex-gt-sm="10">
+                        <label>Count</label>
+                        <input ng-model="value.count" placeholder="5">                    
+                    </md-input-container>
+                
+                    <md-input-container class="md-block" flex-gt-sm="10">
+                        <label>Price</label>
+                        <input ng-model="value.price" placeholder="199">
+                    </md-input-container>
+                
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary md-mini" ng-click="deleteRow(key)">Del</md-button>
+                    </md-input-container>    
+                </div>
+            </div>
+
+            <md-input-container class="md-block" flex="30">    
+                <md-button class="md-raised md-primary" ng-click="orderAdd()">SAVE</md-button>
+            </md-input-container>
+        </form>
+        </md-content>
+
         <div>
             <a href="#" ng-click="siginOut()">Exit profile</a>    
         </div>        

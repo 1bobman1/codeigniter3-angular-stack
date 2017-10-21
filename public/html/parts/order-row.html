@@ -1,0 +1,21 @@
+<div layout-gt-sm="row" ng-keypress="add($event)">
+    <md-input-container class="md-block" flex-gt-sm="30">
+        <label>Product name</label>
+        <input name="data.productName" ng-model="data[countRow].productName" placeholder="short name product">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="10">
+        <label>Count</label>
+        <input name="data.productCount" ng-model="data[countRow].productCount" placeholder="5">                    
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="10">
+        <label>Price</label>
+        <input name="data.price" ng-model="data[countRow].price" placeholder="199">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+        <label>{{countRow}}</label>
+        <md-button class="md-raised md-primary md-mini" ng-click="add($event, true)">Add</md-button>
+    </md-input-container>    
+</div>

@@ -1,5 +1,5 @@
 angular.module('GeneralApp', [
-    'ngRoute', 'ngMaterial', 'ngAnimate', 'monospaced.elastic', 'angular-clipboard', 'oc.lazyLoad'
+    'ngRoute', 'ngMaterial', 'ngAnimate', 'angular-clipboard', 'oc.lazyLoad'
 ])
     .run(['$rootScope', '$location', '$http', '$q',
         '$route', '$routeParams', '$timeout', '$window',

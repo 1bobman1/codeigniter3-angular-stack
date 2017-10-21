@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Add_users_table extends CI_Migration {
+class Migration_Add_orders extends CI_Migration {
 
         public function up()
         {
@@ -15,23 +15,23 @@ class Migration_Add_users_table extends CI_Migration {
                         ),
                         'name' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '100',
+                                'constraint' => '200',
                         ),
-                        'email' => array(
-                                'type' => 'VARCHAR',
-                                'constraint' => '100',
+                        'count' => array(
+                                'type' => 'INT',
+                                'constraint' => '19',
                         ),
-                        'password' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => '100',
+                        'price' => array(
+                            'type' => 'INT',
+                            'constraint' => '19',
                         ),
                 ));
                 $this->dbforge->add_key('id', TRUE);
-                $this->dbforge->create_table('users');
+                $this->dbforge->create_table('orders');
         }
 
         public function down()
         {
-                $this->dbforge->drop_table('users');
+                $this->dbforge->drop_table('orders');
         }
 }

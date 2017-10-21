@@ -53,7 +53,7 @@ class Main extends CI_Controller
 			$this->output->set_output(json_encode($data));			
 			return false;
 		}
-		$data1 = $this->input->post(NULL, TRUE);
+
 		$input_data = json_decode(trim(file_get_contents('php://input')), true);
 
 		if (!empty($input_data)) {
