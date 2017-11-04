@@ -17,7 +17,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 bower_components/
 public/vendor/
-system/
 /node_modules/
 
 # IDE Files
